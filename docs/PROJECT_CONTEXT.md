@@ -10,13 +10,13 @@ The AI Support Assistant is a staged full-stack learning project. The planned ap
 
 ## Current status
 
-- **Stage:** 1 — Java Fundamentals + Spring Boot Backend Skeleton.
-- **Completed:** Stage 0 foundation and Stage 1 Maven/Spring Boot backend skeleton with `GET /api/health`, `GET /api/questions`, application properties, and endpoint integration tests.
-- **Backend:** Java 17 / Spring Boot application under `backend/`; `/api/health` responds with `{"status":"UP"}` and `/api/questions` currently responds with an empty array.
+- **Stage:** 2 — Data Model + MongoDB.
+- **Completed:** Stage 0 foundation; Stage 1 health/questions endpoints; Stage 2 MongoDB documents for users, conversations, and messages; Spring Data repositories; user/conversation/message APIs; validation, error handling, query indexes, pagination, and endpoint tests.
+- **Backend:** Java 17 / Spring Boot application under `backend/`; MongoDB URI is configured by `MONGODB_URI` and defaults to `mongodb://localhost:27017/ai_support_assistant`. `GET /api/health` responds with `{"status":"UP"}` and `GET /api/questions` remains an empty array.
 - **Frontend:** Directory structure exists; no application code or build configuration has been added.
-- **Repository:** No persistence repository is implemented; a database/data-access layer is deferred to Stage 2.
-- **Verification:** `mvn test` completed successfully using a temporary Maven 3.9.12 distribution: 2 endpoint integration tests passed, with no failures or errors. Maven is not installed globally in the current environment. Once Maven is available, run tests with `cd backend && mvn test` and start the app with `cd backend && mvn spring-boot:run`.
-- **Not started:** Stage 2 and all later stages, including MongoDB, frontend application, AI integration, RAG, authentication, Docker, CI/CD, and SSR.
+- **Relationships:** `Conversation.userId` references `User._id`; `Message.conversationId` references `Conversation._id`. References are stored as MongoDB ObjectIds. No authentication or `DBRef` relationship management is implemented.
+- **Verification:** `mvn test` passes all 14 Stage 1/2 tests. Stage 2 HTTP tests use mocked repositories; an additional live smoke test against a temporary MongoDB 8.0.12 instance verified user/conversation/message writes and reads, pagination, duplicate-email conflict handling, and invalid-ID validation. No temporary MongoDB files were kept in the repository.
+- **Not started:** Stage 3 and later stages, including frontend application, AI integration, RAG, authentication, Docker, CI/CD, performance/scaling, and SSR.
 
 ## Stage 0 working agreements
 
@@ -28,4 +28,4 @@ The AI Support Assistant is a staged full-stack learning project. The planned ap
 
 ## Next milestone
 
-Review the Stage 1 backend skeleton. Do not begin Stage 2 until approved.
+Review the Stage 2 MongoDB persistence layer. Do not begin Stage 3 until approved.
