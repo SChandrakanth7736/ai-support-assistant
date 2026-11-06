@@ -9,11 +9,11 @@ A staged full-stack learning project for building an AI-powered technical suppor
 - `docs/` — Project notes and the current implementation status.
 - `AI_Support_Assistant_ServiceNow_Interview_Project_Guide.md` — Master learning and project guide.
 
-The backend implements the Stage 1 Spring Boot skeleton and Stage 2 MongoDB persistence. The frontend remains directory scaffolding only.
+The backend implements the Stage 1 Spring Boot skeleton and Stage 2 MongoDB persistence. The Stage 3 Lit frontend displays local demo conversations and checks backend connectivity. See [frontend/README.md](frontend/README.md) for startup and verification commands.
 
 ## Current status
 
-Stages 1 and 2 are implemented. See [Project Context](docs/PROJECT_CONTEXT.md) for the application status and next milestone.
+Stages 1 and 2 are implemented, with the Stage 3 frontend added for review. See [Project Context](docs/PROJECT_CONTEXT.md) for the application status and next milestone.
 
 ## Continuous integration
 
